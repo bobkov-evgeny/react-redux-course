@@ -1,5 +1,5 @@
 import React from "react";
-import {actionCreators} from "../store";
+import {del} from "../store";
 import {connect} from "react-redux";
 
 const ToDo = ({ item, deleteToDo }) => {
@@ -12,7 +12,7 @@ const ToDo = ({ item, deleteToDo }) => {
 function mapDispatchToProps(dispatch, ownProps) {
     console.log(ownProps, 'sssss')
     return {
-        deleteToDo: () => dispatch(actionCreators.deleteToDo(ownProps.item.id))
+        deleteToDo: () => dispatch(del(ownProps.item.id))
     };
 }
 
